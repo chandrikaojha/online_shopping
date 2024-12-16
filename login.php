@@ -1,26 +1,22 @@
 <?php
    include('dbconnection.php');
-   if(isset($_POST['submit'])) {
+   if(isset($_POST['btn_login'])) {
        
    
    
-       $name = $_POST['name'];
+       $email = $_POST['email'];
        $password = $_POST['password'];
 
-       $sql = "insert into login(email,password)values('$email','$password')";
+       $sql = "select * from register where email ='$email'AND password ='$password'";
 
        $query = mysqli_query($con,$sql);
-
-       // print_r($query);
-       // die();
-   
-       
-       if($query){
+  
+       if($query->num_rows !=0){
            echo "<script>alert('data inserted sucessfully')</script>";
-        //    header('location:orders.php');
-        //    die();
+           header('location:orders.php');
+           die();
        } else {
-           echo "<script>alert('there is an error')</script>";
+           echo "<script>alert('Invalid Credential Please Check Email and Password')</script>";
    
        }
    }
@@ -55,7 +51,7 @@
                 <div class="forgot-password">
                     <a href="reset-password.html">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn" name="btn_login">Login</button>
                 <div class="signup-link">
                     Don't have an account? <a href="signup.php">Sign up now</a>
                 </div>
