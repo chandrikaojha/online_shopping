@@ -31,6 +31,24 @@ if(isset($_POST['Submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>insert data into database</title>
 </head>
+<style>
+    body{
+        background: pink;
+        width: 100;
+        height: 100vh;
+        font-family: sans-serif;
+        padding: 200px;
+    }
+    .form{
+        width: 300px;
+        margin: 15px;
+    }
+    form label{
+        display: flex;
+        
+        
+    }
+</style>
 <body>
     <div style="margin:5px auto">
         <form action="product.php" method="POST">

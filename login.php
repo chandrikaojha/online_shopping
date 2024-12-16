@@ -17,6 +17,8 @@
        
        if($query){
            echo "<script>alert('data inserted sucessfully')</script>";
+        //    header('location:orders.php');
+        //    die();
        } else {
            echo "<script>alert('there is an error')</script>";
    

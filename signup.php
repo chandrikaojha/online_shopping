@@ -7,17 +7,17 @@ if(isset($_POST['submit'])) {
 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $contact = $_POST['mobile'];
+    $mobile = $_POST['mobile'];
     $address = $_POST['address'];
     $password = $_POST['password'];
 
-
     
     
+    
 
-    $sql = "insert into register(name,email,contact,address,password)values('$name','$email', '$contact','$address','$password')";
+    $sql = "insert into register(name,email,mobile,address,password)values('$name','$email', '$mobile','$address','$password')";
    
-
+   
     $query = mysqli_query($con,$sql);
 
     // print_r($query);
@@ -26,6 +26,8 @@ if(isset($_POST['submit'])) {
     
     if($query){
         echo "<script>alert('data inserted sucessfully')</script>";
+        header('location:login.php');
+        die();
     } else {
         echo "<script>alert('there is an error')</script>";
 
@@ -45,7 +47,6 @@ if(isset($_POST['submit'])) {
         <div class="signup-container">
             <h2>Create Your Account</h2>
             <p>Join us and start shopping today!</p>
-            <a href="view_users.php">View Users</a>
             <form action="signup.php" method="POST">
                 <div class="input-group">
                     <label for="full-name"> Name</label>
@@ -70,7 +71,7 @@ if(isset($_POST['submit'])) {
                
                 <button type="submit" class="btn" name="submit">Sign Up</button>
                 <div class="login-link">
-                    Already have an account? <a href="login.html">Log in</a>
+                    Already have an account? <a href="login.php">Log in</a>
                 </div>
             </form>
         </div>

@@ -7,10 +7,10 @@ if(isset($_POST['submit'])){
     $Address = $_POST['Address'];
     $ContactNumber = $_POST['ContactNumber'];
 
-//     print_r($_POST);
-// die();
 
     $query = mysqli_query($con, "insert into customer(FirstName, LastName, Email, Address, ContactNumber) Values('$FirstName', '$LastName','$Email','$Address', '$ContactNumber')");
+   
+    
     if($query){
         echo "<script>alert('data inserted successfully')</script>";
     }else{
@@ -32,6 +32,24 @@ if(isset($_POST['submit'])){
     <title>Document</title>
 </head>
 <body>
+<style>
+    body{
+        background: pink;
+        width: 100;
+        height: 100vh;
+        font-family: sans-serif;
+        padding: 200px;
+    }
+    .form{
+        width: 300px;
+        margin: 15px;
+    }
+    form label{
+        display: flex;
+        
+        
+    }
+</style>
     <form action="customer.php" method="post">
         <label for="">FirstName:</label>
         <input type="text" name="FirstName"><br><br>

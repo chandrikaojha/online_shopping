@@ -49,8 +49,7 @@ $exe_query = mysqli_query($con, $query);
                     <?php while ($records = mysqli_fetch_assoc($exe_query)) { ?>
 
                         <tr>
-                            <td><?php echo $records['customerID']; ?></td>
-                            <td><?php echo $records['customerID']; ?></td>
+                            <td><?php echo $records['customerId']; ?></td>
                             <td><?php echo $records['orderDate']; ?></td>
                             <td><?php echo $records['quantity']; ?></td>
                             <td><?php echo $records['totalAmount']; ?></td>
